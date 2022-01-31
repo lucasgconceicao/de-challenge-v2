@@ -1,23 +1,44 @@
 # Instructions
+How to execute deployement of the ETL pipeline for The EPL (English Premier League)
+Requirements: Docker, Python
 
-# Navigate to /de-challenge-v2/
-cd ./de-challenge-v2/
-
-# Create new virutal env and install dependencies
-python -m venv venv
-
+# Docker
+1. Clone the repository
+```
 git clone https://github.com/lucasgconceicao/de-challenge-v2.git
+```
+2. Navigate to cloned repository /de-challenge-v2/
+```
+cd ./de-challenge-v2/
+```
+3. Create a Docker Image from DockerFile
+```
+docker build --tag epl_image -f ./deploy/Dockerfile .
+```
+4. Execute the ETL script
+```
+docker run -v %cd%/reports/:/reports/ test
+```
 
-# Activate the .eplenv and navigate to the src location of main.py
-venv\Scripts\activate (Linux: venv/bin/activate)
+# VirtualEnv
+1. Create new virutal env and install dependencies
+```
+python -m venv venv
+```
+2. Activate the virtual env and navigate to the src location of main.py
+```
+venv\Scripts\activate (linux: venv/bin/activate)
 pip install -r requirements.txt
 cd src
-
-# Run the ETL job for EPL reporting
+```
+3. Run the EPL job
+```
 python main.py
+```
 
-# Reports:
+# Reports should be generate at:
+./de-challenge-v2/reports/
     - /reports/position_table_by_season.txt -> The position table for all the seasons 
-    - /reports/general_stats_by_season.txt -> The summary statistics for all teams by season. It includes best scoring team and ratio of shots on target convert in goals by season. 
+    - /reports/general_stats_by_season.txt -> The summary statistics for all teams by season. It includes best scoring team and ratio of shots on target convert in goals by season.    
     
     

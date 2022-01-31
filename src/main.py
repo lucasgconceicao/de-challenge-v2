@@ -13,7 +13,7 @@ if __name__ == '__main__':
     obj = generateReport()
     position_table_report_path = obj.working_directory / "reports" / 'position_table_by_season.txt'
     general_stats_report_path = obj.working_directory / "reports" / 'general_stats_by_season.txt'
-    
+
     ''' Redirect stdout to file to generate reports '''
     # Position Table by season
     print('Executing...')
