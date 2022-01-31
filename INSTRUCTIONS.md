@@ -34,7 +34,7 @@ cd src
 ```
 3. Run the EPL job
 ```
-python main.py
+python src/main.py
 ```
 
 # Reports should be generate at:
