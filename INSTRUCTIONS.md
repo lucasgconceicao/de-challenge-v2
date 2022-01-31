@@ -17,16 +17,16 @@ docker build --tag epl_image -f ./deploy/Dockerfile .
 ```
 4. Execute the ETL script
 ```
-docker run -v %cd%/reports/:/reports/ epl_image
-docker run -v %pwd%/reports/:/reports/ epl_image
+windows: docker run -v %cd%/reports/:/reports/ epl_image
+linux: docker run -v $PWD/reports/:/reports/ epl_imagee
 ```
 
 # VirtualEnv
-1. Create new virutal env and install dependencies
+1. Create new virutal env
 ```
 python -m venv venv
 ```
-2. Activate the virtual env and navigate to the src location of main.py
+2. Activate the virtual env and install dependencies, then navigate to the src
 ```
 venv\Scripts\activate (linux: source venv/bin/activate)
 pip install -r deploy/requirements.txt
