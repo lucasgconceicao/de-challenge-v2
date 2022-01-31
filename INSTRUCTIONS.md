@@ -18,7 +18,7 @@ docker build --tag epl_image -f ./deploy/Dockerfile .
 4. Execute the ETL script
 ```
 windows: docker run -v %cd%/reports/:/reports/ epl_image
-linux: docker run -v $PWD/reports/:/reports/ epl_imagee
+linux: docker run -v $PWD/reports/:/reports/ epl_image
 ```
 
 # VirtualEnv
