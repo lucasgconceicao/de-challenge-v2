@@ -28,7 +28,7 @@ python -m venv venv
 ```
 2. Activate the virtual env and navigate to the src location of main.py
 ```
-venv\Scripts\activate (linux: venv/bin/activate)
+venv\Scripts\activate (linux: source venv/bin/activate)
 pip install -r deploy/requirements.txt
 cd src
 ```
